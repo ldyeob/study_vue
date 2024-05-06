@@ -32,7 +32,11 @@
 					1.使用这些API:push()、pop()、shift()、unshift()、splice()、sort()、reverse() P36 15분[https://v2.cn.vuejs.org/v2/guide/list.html#%E5%8F%98%E6%9B%B4%E6%96%B9%E6%B3%95]
 					2.Vue.set() 或 vm.$set() 두번재 파라미터는 인데스
 				
-				特别注意：Vue.set() 和 vm.$set() 不能给vm 或 vm的根数据对象(date/_data...) 添加属性！！！
+				特别注意：Vue.set() 和 vm.$set() 不能给vm 或 vm的根数据对象(vm._data...) 添加属性！！！ // const vm = new Vue({..})
+				5. 数据劫持，指的是在访问或者修改对象的某个属性时，通过一段代码(getter,setter)拦截这个行为，进行额外的操作或者修改返回结果。[https://www.jianshu.com/p/9b2a3cfc01ad]
+				典型案例：数据双向绑定。vue 2.x 使用的是 Object.defineProperty()(Vue 在 3.x 版本之后改用 Proxy 进行实现)。
+				数据变化 => setter劫持 =>  原Vue对象数据(vue.name)被改变 + 解析模板
+
 		-->
 		<!-- 准备好一个容器-->
 		<div id="root">
