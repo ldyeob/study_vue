@@ -70,9 +70,10 @@
 			},
 			directives:{
 				//big函数何时会被调用？1.指令与元素成功绑定时（一上来）。2.指令所在的模板被重新解析时。
+				//big == fbind:bind + fbind: update
 				/* 'big-number':function(element,binding){
 				// console.log('big')
-				element.innerText = binding.value * 10  // key : value
+				element.innerText = binding.value * 10  // key : value 配置对象
 				}, */
 
 				/* 'big-number'(element,binding){
